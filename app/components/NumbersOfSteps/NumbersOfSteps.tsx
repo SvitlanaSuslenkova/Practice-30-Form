@@ -9,7 +9,6 @@ import { useState } from "react";
 interface INumbersOfSteps {
   stepOne: boolean;
   setStepOne: (stepOne: boolean) => void;
-  stepOneDone: boolean;
   stepTwo: boolean;
   setStepTwo: (stepTwo: boolean) => void;
   stepThree: boolean;
@@ -23,7 +22,6 @@ interface INumbersOfSteps {
 const NumbersOfSteps: React.FC<INumbersOfSteps> = ({
   stepOne,
   setStepOne,
-  stepOneDone,
   stepTwo,
   setStepTwo,
   stepThree,

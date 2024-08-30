@@ -3,27 +3,23 @@ import React, { useState } from "react";
 import styles from "./StepOne.module.css";
 import stylesB from "../Mainpage/NextBackButtons.module.css";
 import { useFormContext } from "react-hook-form";
-import { useEffect } from "react";
 
 interface IStepOne {
   setStepOne: (stepOne: boolean) => void;
   setStepTwo: (stepTwo: boolean) => void;
   setStepOneDone: (stepOneDone: boolean) => void;
-  stepOneDone: boolean;
 }
 
 const StepOne: React.FC<IStepOne> = ({
   setStepOne,
   setStepTwo,
   setStepOneDone,
-  stepOneDone,
 }) => {
   //const multipleValues = getValues(["name", "email", "phone"]);
 
   const {
     register,
     formState: { errors },
-    getValues,
     trigger,
   } = useFormContext();
   const [disabled, setDisabled] = useState(false);

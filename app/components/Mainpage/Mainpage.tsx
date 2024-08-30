@@ -91,7 +91,6 @@ const Mainpage = () => {
             <NumbersOfSteps
               stepOne={stepOne}
               setStepOne={setStepOne}
-              stepOneDone={stepOneDone}
               stepTwo={stepTwo}
               setStepTwo={setStepTwo}
               stepThree={stepThree}
@@ -107,7 +106,6 @@ const Mainpage = () => {
               <NumbersOfSteps
                 stepOne={stepOne}
                 setStepOne={setStepOne}
-                stepOneDone={stepOneDone}
                 stepTwo={stepTwo}
                 setStepTwo={setStepTwo}
                 stepThree={stepThree}
@@ -123,7 +121,6 @@ const Mainpage = () => {
                 setStepOne={setStepOne}
                 setStepTwo={setStepTwo}
                 setStepOneDone={setStepOneDone}
-                stepOneDone={stepOneDone}
               />
             )}
             {stepTwo && (

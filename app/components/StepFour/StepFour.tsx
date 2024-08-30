@@ -36,10 +36,7 @@ const StepFour: React.FC<IStepFour> = ({
   customizableProfilePrice,
   setThankYou,
 }) => {
-  const {
-    formState: { errors },
-    setValue,
-  } = useFormContext();
+  const { setValue } = useFormContext();
 
   const [changeDiv, setChangeDiv] = useState(false);
   const plans = ["arcade", "advanced", "pro"];
