@@ -1,0 +1,80 @@
+/*.checkbox {
+  position: absolute;
+
+  width: 0;
+  height: 0;
+}
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+
+  background-color: hsl(var(--checkbox-bg));
+}
+.checkbox:hover ~ .checkmark {
+  background-color: red;
+}*/
+
+.checkboxwrapper21 .control {
+  display: block;
+  position: relative;
+  padding-left: 24px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.checkboxwrapper21 .control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.checkboxwrapper21 .control__indicator {
+  position: absolute;
+  top: -8px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: white;
+  border: 1px solid hsl(var(--cool-gray));
+  border-radius: 0.2em;
+}
+.checkboxwrapper21 .control:hover input ~ .control__indicator,
+.checkboxwrapper21 .control input:focus ~ .control__indicator {
+  background: hsl(var(--light-gray));
+}
+.checkboxwrapper21 .control input:checked ~ .control__indicator {
+  background: hsl(var(--purplish-blue));
+}
+.checkboxwrapper21
+  .control:hover
+  input:not([disabled]):checked
+  ~ .control__indicator,
+.checkboxwrapper21 .control input:checked:focus ~ .control__indicator {
+  background: hsl(var(--purplish-blue));
+}
+.checkboxwrapper21 .control input:disabled ~ .control__indicator {
+  background: hsl(var(--white));
+  opacity: 0.6;
+  pointer-events: none;
+}
+.checkboxwrapper21 .control__indicator:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+.checkboxwrapper21 .control input:checked ~ .control__indicator:after {
+  display: block;
+}
+.checkboxwrapper21 .controlcheckbox .control__indicator:after {
+  left: 8px;
+  top: 4px;
+  width: 4px;
+  height: 10px;
+  border: solid hsl(var(--white));
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.checkboxwrapper21 .controlcheckbox input:disabled ~ .control__indicator:after {
+  border-color: hsl(var(--white));
+}

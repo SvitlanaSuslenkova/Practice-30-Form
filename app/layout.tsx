@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { ThemeProvider } from "./Context/ThemeContext";
-import { Open_Sans, Nunito_Sans } from "next/font/google";
-import Header from "./components/Header/Header";
+
+import { Open_Sans, Ubuntu } from "next/font/google";
+
 import "./reset.css";
 import "./globals.css";
 const openSans = Open_Sans({ subsets: ["latin"], weight: "500" });
-const nunitoSans = Nunito_Sans({ subsets: ["latin"] });
+const ubuntu = Ubuntu({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
-  title: "Countries of the world",
-  description: "Where in the world?",
+  title: "Form",
+  description: "Multi-step form",
 };
 
 export default function RootLayout({
@@ -19,11 +19,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${openSans.className} ${nunitoSans.className}`}>
-        <ThemeProvider>
-          <Header />
-          {children}
-        </ThemeProvider>
+      <body className={`${openSans.className} ${ubuntu.className}`}>
+        {children}
       </body>
     </html>
   );

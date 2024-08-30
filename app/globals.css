@@ -1,18 +1,42 @@
 :root {
-  --light-mode-input: 0, 0%, 52%; /* average grey */
-}
-[data-theme="dark"] {
-  --elements: 209, 23%, 22%; /* 70% black+10%blue */
-  --background: 207, 26%, 17%; /* 85% black +10%blue */
-  --text: 0, 0%, 100%; /* white */
-}
-[data-theme="light"] {
-  --elements: 0, 0%, 100%; /* white */
-  --background: 0, 0%, 98%; /* light light gray */
-  --text: 200, 15%, 8%; /* 90% black */
+  --marine-blue: 213, 96%, 18%;
+  --purplish-blue: 243, 100%, 62%; /*st 2 borders st2 checked*/
+  --pastel-blue: 228, 100%, 84%;
+  --light-blue: 206, 94%, 87%; /*number of steps button hover*/
+  --strawberry-red: 354, 84%, 57%;
+
+  --cool-gray: 231, 11%, 63%; /* st 1 input*/
+  --light-gray: 229, 24%, 87%;
+  --magnolia: 217, 100%, 97%; /*bg */
+  --alabaster: 231, 100%, 99%;
+  --white: 0, 0%, 100%;
 }
 
 body {
-  font-family: "Open Sans", "Nunito Sans", sans-serif;
-  font-weight: 600; /* 300 600 800 */
+  font-family: "Open Sans", "Ubuntu", sans-serif;
+  font-weight: 400; /*400,500,700*/
+  font-style: normal;
+  background-color: hsl(var(--magnolia));
+}
+h1 {
+  color: hsl(var(--marine-blue));
+  font-size: 22px;
+  font-weight: 700;
+}
+h2 {
+  margin-top: 8px;
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: hsl(var(--cool-gray));
+  line-height: 140%;
+}
+@media only screen and (min-width: 800px) {
+  h1 {
+    font-size: 32px;
+    letter-spacing: 1px;
+  }
+  h2 {
+    margin-bottom: 24px;
+  }
 }

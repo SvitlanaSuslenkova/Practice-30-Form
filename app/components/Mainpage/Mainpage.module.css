@@ -1,0 +1,68 @@
+.mainpageDiv {
+  background-image: url("/bg-sidebar-mobile.svg");
+  background-size: auto 172px;
+  background-position: top center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  padding: 32px 16px 16px 16px;
+  box-shadow: 0px 16px 16px hsl(var(--cool-gray));
+  min-height: 660px;
+}
+.formDiv {
+  min-width: 260px;
+  padding: 32px 24px;
+  border-radius: 8px;
+  max-width: 500px;
+  display: block;
+  margin-inline: auto;
+  background-color: hsl(var(--white));
+  box-shadow: 0 0px 16px hsl(var(--cool-gray), 0.3);
+}
+.desktopImage {
+  display: none;
+}
+/*
+.formContainer {
+  padding: 32px 24px;
+  border-radius: 8px;
+  max-width: 500px;
+  display: block;
+  margin-inline: auto;
+}*/
+
+@media only screen and (min-width: 376px) {
+  .mainpageDiv {
+    background-image: url("/bg-sidebar-tablet800.svg");
+  }
+}
+@media only screen and (min-width: 800px) {
+  .numbersOfStepsMobile {
+    display: none;
+  }
+  .mainpageDiv {
+    background-image: none;
+    padding-top: 0px;
+    display: grid;
+  }
+  .formDiv {
+    display: grid;
+    grid-template-columns: 30% calc(70% - 80px);
+    column-gap: 80px;
+    max-width: 940px;
+    min-height: 600px;
+    padding: 16px;
+  }
+  .form {
+    align-self: center;
+  }
+  .desktopImage {
+    display: block;
+    background-image: url("/bg-sidebar-desktop.svg");
+    width: 100%;
+    height: 100%;
+    border-radius: 0.4em;
+    grid-row: 1 / span 2;
+    padding: 42px 32px;
+  }
+}

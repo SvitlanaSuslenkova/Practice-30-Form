@@ -1,0 +1,114 @@
+/*.formContainer {
+  padding: 32px 24px;
+  border-radius: 8px;
+  max-width: 500px;
+  display: block;
+  margin-inline: auto;
+  background-color: hsl(var(--white));
+}*/
+.planButton {
+  display: grid;
+  grid-template-columns: 64px auto;
+  grid-template-rows: auto;
+  width: 100%;
+  padding: 8px;
+  text-align: left;
+  align-items: center;
+  background-color: hsl(var(--white));
+  border: 1px solid hsl(var(--cool-gray));
+  border-radius: 0.4em;
+  margin-bottom: 8px;
+  cursor: pointer;
+  justify-items: center;
+}
+.activeButton {
+  display: grid;
+  grid-template-columns: 64px auto;
+  grid-template-rows: auto;
+  width: 100%;
+  padding: 8px;
+  text-align: left;
+  align-items: center;
+  border-radius: 0.4em;
+  margin-bottom: 8px;
+  cursor: pointer;
+  justify-items: center;
+  background-color: hsl(216, 82%, 94%);
+  border: 1px solid hsl(var(--purplish-blue));
+}
+.planButton:hover {
+  background-color: hsl(var(--alabaster));
+  border: 1px solid hsl(var(--purplish-blue));
+}
+.planButton > div,
+.activeButton > div {
+  justify-self: left;
+  margin-left: 8px;
+}
+
+.buttonName {
+  color: hsl(var(--marine-blue));
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 140%;
+}
+.buttonPrice {
+  color: hsl(var(--cool-gray));
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 140%;
+}
+.monthYearDivContainer {
+  background-color: hsl(var(--magnolia));
+  display: grid;
+  justify-content: center;
+  margin-top: 24px;
+}
+.monthYearDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  padding: 8px 24px;
+  font-size: 14px;
+  color: hsl(var(--cool-gray));
+  font-weight: 600;
+  width: 280px;
+  align-items: center;
+}
+.selectedMonthYearText {
+  color: hsl(var(--marine-blue));
+  font-size: 14px;
+  font-weight: 600;
+}
+.twoMonthsFree {
+  color: hsl(var(--marine-blue));
+  font-size: 12px;
+  font-weight: 400;
+}
+@media only screen and (min-width: 800px) {
+  .formContainer {
+    padding-top: 40px;
+    width: 100%;
+    max-width: 450px;
+  }
+  .desktopButtonsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 16px;
+    min-height: 156px;
+  }
+  .planButton {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 64px auto;
+  }
+  .activeButton {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 64px auto;
+  }
+  .buttonImage {
+    justify-self: left;
+    margin-left: 8px;
+  }
+}

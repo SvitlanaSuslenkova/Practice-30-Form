@@ -1,0 +1,67 @@
+/*.formContainer {
+  padding: 32px 24px;
+  border-radius: 8px;
+  max-width: 500px;
+  display: block;
+  margin-inline: auto;
+  background-color: hsl(var(--white));
+}*/
+
+.formStepOne {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  row-gap: 16px;
+}
+
+.labelAndInput {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin-inline: auto;
+}
+.labelAndErrorDiv {
+  display: grid;
+  grid-template-columns: 40% auto;
+  column-gap: 8px;
+  align-items: end;
+}
+.labelAndErrorDiv > label {
+  color: hsl(var(--marine-blue));
+  font-size: 14px;
+  font-weight: 500;
+}
+.errorText {
+  text-align: right;
+  color: hsl(var(--strawberry-red));
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.labelAndInput > input {
+  display: block;
+  margin-inline: auto;
+  margin-top: 4px;
+  height: 40px;
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid hsl(var(--cool-gray));
+  padding-inline: 8px;
+  font-size: 16px;
+}
+.labelAndInput > input::placeholder {
+  font-size: 16px;
+  color: hsl(var(--cool-gray));
+}
+@media only screen and (min-width: 800px) {
+  .formContainer {
+    padding-top: 40px;
+  }
+  .formStepOne {
+    justify-content: start;
+    grid-template-columns: 100%;
+  }
+  .labelAndInput {
+    max-width: 450px;
+    margin-inline: 0;
+  }
+}
