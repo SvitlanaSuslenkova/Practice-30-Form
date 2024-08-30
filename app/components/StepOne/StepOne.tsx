@@ -7,13 +7,13 @@ import { useFormContext } from "react-hook-form";
 interface IStepOne {
   setStepOne: (stepOne: boolean) => void;
   setStepTwo: (stepTwo: boolean) => void;
-  setStepOneDone: (stepOneDone: boolean) => void;
+  //setStepOneDone: (stepOneDone: boolean) => void;
 }
 
 const StepOne: React.FC<IStepOne> = ({
   setStepOne,
   setStepTwo,
-  setStepOneDone,
+  //setStepOneDone,
 }) => {
   //const multipleValues = getValues(["name", "email", "phone"]);
 
@@ -28,11 +28,11 @@ const StepOne: React.FC<IStepOne> = ({
     const t = await trigger();
     if (t) {
       if (errors.name || errors.email || errors.phone) {
-        setStepOneDone(false);
+        // setStepOneDone(false);
         setDisabled(true);
       } else {
         setDisabled(false);
-        setStepOneDone(true);
+        // setStepOneDone(true);
         setStepOne(false);
         setStepTwo(true);
       }

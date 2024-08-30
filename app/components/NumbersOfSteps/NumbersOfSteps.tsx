@@ -15,7 +15,7 @@ interface INumbersOfSteps {
   setStepThree: (stepThree: boolean) => void;
   stepFour: boolean;
   setStepFour: (stepFour: boolean) => void;
-  setStepOneDone: (stepFour: boolean) => void;
+  // setStepOneDone: (stepFour: boolean) => void;
   thankYou: boolean;
 }
 
@@ -28,7 +28,7 @@ const NumbersOfSteps: React.FC<INumbersOfSteps> = ({
   setStepThree,
   stepFour,
   setStepFour,
-  setStepOneDone,
+  //setStepOneDone,
   thankYou,
 }): JSX.Element => {
   const {
@@ -40,12 +40,12 @@ const NumbersOfSteps: React.FC<INumbersOfSteps> = ({
   const [disabled, setDisabled] = useState(false);
 
   function hasErrors() {
-    setStepOneDone(false);
+    //setStepOneDone(false);
     setDisabled(true);
   }
   function noErrors() {
     setDisabled(false);
-    setStepOneDone(true);
+    //setStepOneDone(true);
   }
 
   const stepOneOn = () => {

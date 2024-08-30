@@ -53,7 +53,7 @@ const Mainpage = () => {
   const [stepFour, setStepFour] = useState(false);
 
   /*step 1*/
-  const [stepOneDone, setStepOneDone] = useState(false);
+  // const [stepOneDone, setStepOneDone] = useState(false);
   /*step 2*/
   const [activePlan, setActivePlan] = useState("arcade");
 
@@ -97,7 +97,7 @@ const Mainpage = () => {
               setStepThree={setStepThree}
               stepFour={stepFour}
               setStepFour={setStepFour}
-              setStepOneDone={setStepOneDone}
+              // setStepOneDone={setStepOneDone}
               thankYou={thankYou}
             />
           </div>
@@ -112,7 +112,7 @@ const Mainpage = () => {
                 setStepThree={setStepThree}
                 stepFour={stepFour}
                 setStepFour={setStepFour}
-                setStepOneDone={setStepOneDone}
+                //setStepOneDone={setStepOneDone}
                 thankYou={thankYou}
               />
             </div>
@@ -120,7 +120,7 @@ const Mainpage = () => {
               <StepOne
                 setStepOne={setStepOne}
                 setStepTwo={setStepTwo}
-                setStepOneDone={setStepOneDone}
+                //setStepOneDone={setStepOneDone}
               />
             )}
             {stepTwo && (
