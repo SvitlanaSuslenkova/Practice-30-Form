@@ -62,7 +62,7 @@ const StepOne: React.FC<IStepOne> = ({
               {...register("name", {
                 required: "Name cannot be empty",
                 pattern: {
-                  value: /^[A-Za-z]+$/,
+                  value: /^[A-Za-z\s]+$/,
                   message: "Name must contain only letters",
                 },
                 minLength: {
