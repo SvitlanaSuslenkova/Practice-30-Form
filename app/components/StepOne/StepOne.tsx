@@ -1,8 +1,8 @@
-"use client";
-import React, { useState } from "react";
-import styles from "./StepOne.module.css";
-import stylesB from "../Mainpage/NextBackButtons.module.css";
-import { useFormContext } from "react-hook-form";
+'use client';
+import React, { useState } from 'react';
+import styles from './StepOne.module.css';
+import stylesB from '../Mainpage/NextBackButtons.module.css';
+import { useFormContext } from 'react-hook-form';
 
 interface IStepOne {
   setStepOne: (stepOne: boolean) => void;
@@ -59,19 +59,19 @@ const StepOne: React.FC<IStepOne> = ({
               type="text"
               id="name"
               placeholder="e.g. Stephen King"
-              {...register("name", {
-                required: "Name cannot be empty",
+              {...register('name', {
+                required: 'Name cannot be empty',
                 pattern: {
                   value: /^[A-Za-z\s]+$/,
-                  message: "Name must contain only letters",
+                  message: 'Name must contain only letters',
                 },
                 minLength: {
                   value: 3,
-                  message: "Name must be at least 3 characters",
+                  message: 'Name must be at least 3 characters',
                 },
                 maxLength: {
                   value: 30,
-                  message: "Name must be less than 30 characters",
+                  message: 'Name must be less than 30 characters',
                 },
               })}
             />
@@ -90,15 +90,15 @@ const StepOne: React.FC<IStepOne> = ({
               type="email"
               id="email"
               placeholder="e.g. stephenking@lorem.com"
-              {...register("email", {
-                required: "Email cannot be empty",
+              {...register('email', {
+                required: 'Email cannot be empty',
                 pattern: {
                   value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
-                  message: "Please enter a valid email address",
+                  message: 'Please enter a valid email address',
                 },
                 maxLength: {
                   value: 30,
-                  message: "Email address must be less than 30 characters",
+                  message: 'Email address must be less than 30 characters',
                 },
               })}
             />
@@ -117,20 +117,20 @@ const StepOne: React.FC<IStepOne> = ({
               type="text"
               id="phone"
               placeholder="e.g. +1 234 567 890"
-              {...register("phone", {
-                required: "Phone number cannot be empty",
+              {...register('phone', {
+                required: 'Phone number cannot be empty',
                 pattern: {
                   value: /^[+]?[0-9]{10,15}$/,
                   message:
-                    "Please enter a valid phone number (+ and 10 numbers)",
+                    'Please enter a valid phone number (+ and 10 numbers)',
                 },
                 minLength: {
                   value: 11,
-                  message: "Phone number must contain + and 10 numbers ",
+                  message: 'Must contain + and 10 numbers ',
                 },
                 maxLength: {
                   value: 11,
-                  message: "Phone number must contain + and 10 numbers ",
+                  message: 'Phone number must contain + and 10 numbers ',
                 },
               })}
             />
