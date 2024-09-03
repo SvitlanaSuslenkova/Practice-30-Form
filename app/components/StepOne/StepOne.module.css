@@ -21,19 +21,19 @@
 }
 .labelAndErrorDiv {
   display: grid;
-  grid-template-columns: 40% auto;
+  grid-template-columns: auto auto;
   column-gap: 8px;
   align-items: end;
 }
 .labelAndErrorDiv > label {
   color: hsl(var(--marine-blue));
-  font-size: 14px;
+  font-size: clamp(11px, 3vw, 14px);
   font-weight: 500;
 }
 .errorText {
   text-align: right;
   color: hsl(var(--strawberry-red));
-  font-size: 14px;
+  font-size: clamp(10px, 3vw, 14px);
   font-weight: 700;
 }
 
