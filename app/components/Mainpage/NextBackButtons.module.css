@@ -5,20 +5,20 @@
   display: grid;
   grid-template-columns: 50% 50%;
   width: 100%;
-  padding: 16px;
+  padding: 1rem;
   background-color: hsl(var(--white));
-  margin-bottom: 16px;
+  margin-bottom: 1rem;
 }
 .goBackButton,
 .nextStepButton {
   display: grid;
   align-items: center;
-  padding: 8px 24px;
+  padding: 0.5rem 1.5rem;
   border: 0;
   border-radius: 0.2em;
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
-  height: 40px;
+  height: 2.5rem;
 }
 
 .nextStepButton {
@@ -40,7 +40,7 @@
 .goBackButton:hover {
   filter: brightness(75%);
 }
-@media only screen and (max-height: 660px) {
+@media only screen and (max-height: 41.25rem) {
   .footerContainer {
     position: initial;
     display: grid;
@@ -48,11 +48,11 @@
     width: 100%;
     padding: 0;
     background-color: hsl(var(--white));
-    margin-bottom: 16px;
-    margin-top: 16px;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
   }
 }
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 50rem) {
   .footerContainer {
     position: initial;
     display: grid;
@@ -60,9 +60,9 @@
     width: 100%;
     padding: 0;
     background-color: hsl(var(--white));
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
     grid-column: 2;
     align-self: flex-end;
-    max-width: 450px;
+    max-width: 28.125rem;
   }
 }

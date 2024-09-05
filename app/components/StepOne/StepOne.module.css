@@ -22,46 +22,46 @@
 .labelAndErrorDiv {
   display: grid;
   grid-template-columns: auto auto;
-  column-gap: 8px;
+  column-gap: 0.5rem;
   align-items: end;
 }
 .labelAndErrorDiv > label {
   color: hsl(var(--marine-blue));
-  font-size: clamp(11px, 3vw, 14px);
+  font-size: clamp(0.688rem, 3vw, 0.875rem);
   font-weight: 500;
 }
 .errorText {
   text-align: right;
   color: hsl(var(--strawberry-red));
-  font-size: clamp(10px, 3vw, 14px);
+  font-size: clamp(0.625rem, 3vw, 0.875rem);
   font-weight: 700;
 }
 
 .labelAndInput > input {
   display: block;
   margin-inline: auto;
-  margin-top: 4px;
-  height: 40px;
+  margin-top: 0.25rem;
+  height: 2.5rem;
   width: 100%;
-  border-radius: 4px;
+  border-radius: 0.25rem;
   border: 1px solid hsl(var(--cool-gray));
-  padding-inline: 8px;
-  font-size: 16px;
+  padding-inline: 0.5rem;
+  font-size: 1rem;
 }
 .labelAndInput > input::placeholder {
-  font-size: 16px;
+  font-size: 1rem;
   color: hsl(var(--cool-gray));
 }
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 50rem) {
   .formContainer {
-    padding-top: 40px;
+    padding-top: 2.5rem;
   }
   .formStepOne {
     justify-content: start;
     grid-template-columns: 100%;
   }
   .labelAndInput {
-    max-width: 450px;
+    max-width: 28.125rem;
     margin-inline: 0;
   }
 }

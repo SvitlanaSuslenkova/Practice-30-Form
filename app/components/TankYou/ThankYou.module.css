@@ -1,12 +1,12 @@
 .iconThankYou {
   display: block;
-  margin: 24px auto;
+  margin: 1.5rem auto;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 50rem) {
   .thankYouContainer {
-    padding-top: 80px;
-    padding-right: 80px;
+    padding-top: 5rem;
+    padding-right: 5rem;
     text-align: center;
     align-self: center;
   }

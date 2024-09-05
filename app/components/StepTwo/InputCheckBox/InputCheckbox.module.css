@@ -11,7 +11,7 @@
   border-radius: 8rem;
 }
 .checkboxLabel::before {
-  content: "";
+  content: '';
   width: 1rem;
   height: 1rem;
   border-radius: 50%;
@@ -31,38 +31,3 @@
 .checkboxInput:checked + .checkboxLabel::before {
   left: calc(3rem - 1rem - 0.2rem); /*  dont add margins-inline!!!*/
 }
-
-/*
-input[type="checkbox"] {
-  display: none;
-}
-label {
-  position: relative;
-  display: grid;
-  align-items: center;
-  width: 3.5rem;
-  height: 2rem;
-  background-color: hsl(var(--marine-blue));
-  border-radius: 8rem;
-}
-label::before {
-  content: "";
-  width: 1.4rem;
-  height: 1.4rem;
-  border-radius: 50%;
-  background-color: hsl(var(--white));
-  left: 0.2rem;
-  position: absolute;
-  transition: left 0.2s;
-}
-label:hover {
-  background-color: hsl(var(--purplish-blue));
-  cursor: pointer;
-}
-input[type="checkbox"]:checked + label {
-  background-color: hsl(var(--marine-blue));
-}
-input[type="checkbox"]:checked + label::before {
-  left: calc(3.5rem - 1.4rem - 0.2rem); /*  dont add margins-inline!!!*/
-/*}
-*/

@@ -1,21 +1,13 @@
-/*.formContainer {
-  padding: 32px 24px;
-  border-radius: 8px;
-  max-width: 500px;
-  display: block;
-  margin-inline: auto;
-  background-color: hsl(var(--white));
-}*/
 .stepThreebutton {
   width: 100%;
   display: grid;
-  padding: 16px;
-  grid-template-columns: 20px auto 48px;
-  column-gap: 16p;
+  padding: 1rem;
+  grid-template-columns: 1.25rem auto 3rem;
+  column-gap: 1rem;
   background-color: hsl(var(--white));
   border: 1px solid hsl(var(--cool-gray));
   border-radius: 0.4em;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
   cursor: pointer;
   align-items: center;
 }
@@ -26,11 +18,11 @@
 .activeStepThreebutton {
   width: 100%;
   display: grid;
-  padding: 16px;
-  grid-template-columns: 20px auto 48px;
-  column-gap: 16p;
+  padding: 1rem;
+  grid-template-columns: 1.25rem auto 3rem;
+
   border-radius: 0.4em;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
   cursor: pointer;
   align-items: center;
 
@@ -39,32 +31,32 @@
 }
 .buttonName {
   text-align: left;
-  margin-left: 16px;
+  margin-left: 1rem;
   color: hsl(var(--marine-blue));
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 700;
   line-height: 140%;
 }
 .buttonDescription {
   text-align: left;
-  margin-left: 16px;
+  margin-left: 1rem;
   color: hsl(var(--cool-gray));
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
 }
 .buttonPrice {
   color: hsl(var(--purplish-blue));
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
 }
 @media only screen and (min-width: 800px) {
   .formContainer {
-    padding-top: 40px;
+    padding-top: 2.5rem;
     width: 100%;
-    max-width: 450px;
+    max-width: 28.125rem;
   }
   .stepThreebutton,
   .activeStepThreebutton {
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
   }
 }
