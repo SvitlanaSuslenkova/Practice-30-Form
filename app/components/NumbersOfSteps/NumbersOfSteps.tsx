@@ -1,35 +1,19 @@
-"use client";
-import React from "react";
-import styles from "./NumbersOfSteps.module.css";
+'use client';
+import React from 'react';
+import styles from './NumbersOfSteps.module.css';
 //import { useNextHandler } from "../Mainpage/checkStepOne";
-import { useFormContext } from "react-hook-form";
+import { useFormContext } from 'react-hook-form';
 //import { checkStepOne } from "../Mainpage/checkStepOne";
-import { useState } from "react";
+import { useState } from 'react';
 
 interface INumbersOfSteps {
-  stepOne: boolean;
-  setStepOne: (stepOne: boolean) => void;
-  stepTwo: boolean;
-  setStepTwo: (stepTwo: boolean) => void;
-  stepThree: boolean;
-  setStepThree: (stepThree: boolean) => void;
-  stepFour: boolean;
-  setStepFour: (stepFour: boolean) => void;
-  // setStepOneDone: (stepFour: boolean) => void;
-  thankYou: boolean;
+  step: 1 | 2 | 3 | 4 | 5;
+  setStep: (step: 1 | 2 | 3 | 4 | 5) => void;
 }
 
 const NumbersOfSteps: React.FC<INumbersOfSteps> = ({
-  stepOne,
-  setStepOne,
-  stepTwo,
-  setStepTwo,
-  stepThree,
-  setStepThree,
-  stepFour,
-  setStepFour,
-  //setStepOneDone,
-  thankYou,
+  step,
+  setStep,
 }): JSX.Element => {
   const {
     // getValues,
@@ -40,19 +24,14 @@ const NumbersOfSteps: React.FC<INumbersOfSteps> = ({
   const [disabled, setDisabled] = useState(false);
 
   function hasErrors() {
-    //setStepOneDone(false);
     setDisabled(true);
   }
   function noErrors() {
     setDisabled(false);
-    //setStepOneDone(true);
   }
 
   const stepOneOn = () => {
-    setStepOne(true);
-    setStepTwo(false);
-    setStepThree(false);
-    setStepFour(false);
+    setStep(1);
   };
   const stepTwoOn = async () => {
     const t = await trigger();
@@ -61,10 +40,7 @@ const NumbersOfSteps: React.FC<INumbersOfSteps> = ({
         hasErrors();
       } else {
         noErrors();
-        setStepOne(false);
-        setStepTwo(true);
-        setStepThree(false);
-        setStepFour(false);
+        setStep(2);
       }
     }
   };
@@ -75,10 +51,7 @@ const NumbersOfSteps: React.FC<INumbersOfSteps> = ({
         hasErrors();
       } else {
         noErrors();
-        setStepOne(false);
-        setStepTwo(false);
-        setStepThree(true);
-        setStepFour(false);
+        setStep(3);
       }
     }
   };
@@ -89,10 +62,7 @@ const NumbersOfSteps: React.FC<INumbersOfSteps> = ({
         hasErrors();
       } else {
         noErrors();
-        setStepOne(false);
-        setStepTwo(false);
-        setStepThree(false);
-        setStepFour(true);
+        setStep(4);
       }
     }
   };
@@ -101,9 +71,9 @@ const NumbersOfSteps: React.FC<INumbersOfSteps> = ({
     <div className={styles.NumbersOfStepsDiv}>
       <button
         type="button"
-        className={stepOne ? styles.numberButtonOn : styles.numberButton}
+        className={step == 1 ? styles.numberButtonOn : styles.numberButton}
         onClick={stepOneOn}
-        disabled={thankYou ? true : false}
+        disabled={step == 5 ? true : false}
       >
         1
       </button>
@@ -113,9 +83,9 @@ const NumbersOfSteps: React.FC<INumbersOfSteps> = ({
       </div>
       <button
         type="button"
-        className={stepTwo ? styles.numberButtonOn : styles.numberButton}
+        className={step == 2 ? styles.numberButtonOn : styles.numberButton}
         onClick={stepTwoOn}
-        disabled={thankYou ? true : disabled}
+        disabled={step == 5 ? true : disabled}
       >
         2
       </button>
@@ -125,9 +95,9 @@ const NumbersOfSteps: React.FC<INumbersOfSteps> = ({
       </div>
       <button
         type="button"
-        className={stepThree ? styles.numberButtonOn : styles.numberButton}
+        className={step == 3 ? styles.numberButtonOn : styles.numberButton}
         onClick={stepThreeOn}
-        disabled={thankYou ? true : disabled}
+        disabled={step == 5 ? true : disabled}
       >
         3
       </button>
@@ -137,9 +107,9 @@ const NumbersOfSteps: React.FC<INumbersOfSteps> = ({
       </div>
       <button
         type="button"
-        className={stepFour ? styles.numberButtonOn : styles.numberButton}
+        className={step == 4 ? styles.numberButtonOn : styles.numberButton}
         onClick={stepFourOn}
-        disabled={thankYou ? true : disabled}
+        disabled={step == 5 ? true : disabled}
       >
         4
       </button>

@@ -1,16 +1,14 @@
-"use client";
-import React from "react";
-import { useEffect } from "react";
-import styles from "./StepTwo.module.css";
-import Image from "next/image";
-import InputCheckBox from "./InputCheckBox/InputCheckbox";
-import stylesB from "../Mainpage/NextBackButtons.module.css";
-import { useFormContext } from "react-hook-form";
+'use client';
+import React from 'react';
+import { useEffect } from 'react';
+import styles from './StepTwo.module.css';
+import Image from 'next/image';
+import InputCheckBox from './InputCheckBox/InputCheckbox';
+import stylesB from '../Mainpage/NextBackButtons.module.css';
+import { useFormContext } from 'react-hook-form';
 
 interface IStepTwo {
-  setStepOne: (stepOne: boolean) => void;
-  setStepTwo: (stepTwo: boolean) => void;
-  setStepThree: (stepThree: boolean) => void;
+  setStep: (step: 1 | 2 | 3 | 4 | 5) => void;
   activePlan: string;
   setActivePlan: (activePlan: string) => void;
   term: string;
@@ -21,9 +19,7 @@ interface IStepTwo {
 }
 
 const StepTwo: React.FC<IStepTwo> = ({
-  setStepOne,
-  setStepTwo,
-  setStepThree,
+  setStep,
   activePlan,
   setActivePlan,
   term,
@@ -43,16 +39,16 @@ const StepTwo: React.FC<IStepTwo> = ({
   }
 
   useEffect(() => {
-    setValue("plan", activePlan);
+    setValue('plan', activePlan);
   }, [activePlan]);
 
   const handleTerm = () => {
-    if (term == "year") {
-      setTerm("month");
-      setValue("term", "month");
+    if (term == 'year') {
+      setTerm('month');
+      setValue('term', 'month');
     } else {
-      setTerm("year");
-      setValue("term", "year");
+      setTerm('year');
+      setValue('term', 'year');
     }
   };
 
@@ -64,11 +60,11 @@ const StepTwo: React.FC<IStepTwo> = ({
         <div className={styles.desktopButtonsContainer}>
           <button
             className={
-              activePlan == "arcade"
+              activePlan == 'arcade'
                 ? `${styles.activeButton}`
                 : `${styles.planButton}`
             }
-            onClick={() => handleSelectPlan("arcade")}
+            onClick={() => handleSelectPlan('arcade')}
             value="arcade"
           >
             <Image
@@ -77,27 +73,27 @@ const StepTwo: React.FC<IStepTwo> = ({
               alt="arcade"
               width={40}
               height={40}
-              onClick={() => handleSelectPlan("arcade")}
+              onClick={() => handleSelectPlan('arcade')}
             ></Image>
             <div>
               <p className={styles.buttonName}>Arcade</p>
               <p className={styles.buttonPrice}>
-                {term == "year"
+                {term == 'year'
                   ? `$${arcadePrice * 10} / yr`
                   : `$${arcadePrice} / mo`}
               </p>
               <p className={styles.twoMonthsFree}>
-                {term == "year" && `2 months free`}
+                {term == 'year' && `2 months free`}
               </p>
             </div>
           </button>
           <button
             className={
-              activePlan == "advanced"
+              activePlan == 'advanced'
                 ? `${styles.activeButton}`
                 : `${styles.planButton}`
             }
-            onClick={() => handleSelectPlan("advanced")}
+            onClick={() => handleSelectPlan('advanced')}
             value="advanced"
           >
             <Image
@@ -106,28 +102,28 @@ const StepTwo: React.FC<IStepTwo> = ({
               alt="advanced"
               width={40}
               height={40}
-              onClick={() => handleSelectPlan("advanced")}
+              onClick={() => handleSelectPlan('advanced')}
             ></Image>
             <div>
               <p className={styles.buttonName}>Advanced</p>
               <p className={styles.buttonPrice}>
-                {term == "year"
+                {term == 'year'
                   ? `$${advancedPrice * 10}/ yr`
                   : `$${advancedPrice} / mo`}
               </p>
               <p className={styles.twoMonthsFree}>
-                {term == "year" && `2 months free`}
+                {term == 'year' && `2 months free`}
               </p>
             </div>
           </button>
 
           <button
             className={
-              activePlan == "pro"
+              activePlan == 'pro'
                 ? `${styles.activeButton}`
                 : `${styles.planButton}`
             }
-            onClick={() => handleSelectPlan("pro")}
+            onClick={() => handleSelectPlan('pro')}
             value="pro"
           >
             <Image
@@ -136,17 +132,17 @@ const StepTwo: React.FC<IStepTwo> = ({
               alt="pro"
               width={40}
               height={40}
-              onClick={() => handleSelectPlan("pro")}
+              onClick={() => handleSelectPlan('pro')}
             ></Image>
             <div>
               <p className={styles.buttonName}>Pro</p>
               <p className={styles.buttonPrice}>
-                {term == "year"
+                {term == 'year'
                   ? `$${proPrice * 10} / yr`
                   : `$${proPrice} / mo`}
               </p>
               <p className={styles.twoMonthsFree}>
-                {term == "year" && `2 months free`}
+                {term == 'year' && `2 months free`}
               </p>
             </div>
           </button>
@@ -155,7 +151,7 @@ const StepTwo: React.FC<IStepTwo> = ({
           <div className={styles.monthYearDiv}>
             <p
               className={
-                term !== "year" ? `${styles.selectedMonthYearText}` : ""
+                term !== 'year' ? `${styles.selectedMonthYearText}` : ''
               }
             >
               Monthly
@@ -163,7 +159,7 @@ const StepTwo: React.FC<IStepTwo> = ({
             <InputCheckBox id="monthOrYear" onClick={handleTerm} term={term} />
             <p
               className={
-                term == "year" ? `${styles.selectedMonthYearText}` : ""
+                term == 'year' ? `${styles.selectedMonthYearText}` : ''
               }
             >
               Yearly
@@ -173,22 +169,10 @@ const StepTwo: React.FC<IStepTwo> = ({
       </div>
 
       <footer className={stylesB.footerContainer}>
-        <button
-          className={stylesB.goBackButton}
-          onClick={() => {
-            setStepTwo(false);
-            setStepOne(true);
-          }}
-        >
+        <button className={stylesB.goBackButton} onClick={() => setStep(1)}>
           Go Back
         </button>
-        <button
-          className={stylesB.nextStepButton}
-          onClick={() => {
-            setStepTwo(false);
-            setStepThree(true);
-          }}
-        >
+        <button className={stylesB.nextStepButton} onClick={() => setStep(3)}>
           Next Step
         </button>
       </footer>

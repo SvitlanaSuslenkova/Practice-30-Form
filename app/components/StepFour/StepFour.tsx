@@ -1,13 +1,12 @@
-"use client";
-import React from "react";
-import styles from "./StepFour.module.css";
-import stylesB from "../Mainpage/NextBackButtons.module.css";
-import { useFormContext } from "react-hook-form";
-import { useState } from "react";
+'use client';
+import React from 'react';
+import styles from './StepFour.module.css';
+import stylesB from '../Mainpage/NextBackButtons.module.css';
+import { useFormContext } from 'react-hook-form';
+import { useState } from 'react';
 
 interface IStepFour {
-  setStepThree: (stepThree: boolean) => void;
-  setStepFour: (stepFour: boolean) => void;
+  setStep: (step: 1 | 2 | 3 | 4 | 5) => void;
   activePlan: string;
   setActivePlan: (activePlan: string) => void;
   term: string;
@@ -18,12 +17,10 @@ interface IStepFour {
   onlineServicePrice: number;
   largerStoragePrice: number;
   customizableProfilePrice: number;
-  setThankYou: (thankYou: boolean) => void;
 }
 
 const StepFour: React.FC<IStepFour> = ({
-  setStepThree,
-  setStepFour,
+  setStep,
   activePlan,
   setActivePlan,
   term,
@@ -34,12 +31,11 @@ const StepFour: React.FC<IStepFour> = ({
   onlineServicePrice,
   largerStoragePrice,
   customizableProfilePrice,
-  setThankYou,
 }) => {
   const { setValue } = useFormContext();
 
   const [changeDiv, setChangeDiv] = useState(false);
-  const plans = ["arcade", "advanced", "pro"];
+  const plans = ['arcade', 'advanced', 'pro'];
   const restPlans = plans.filter((plan: string) => plan !== activePlan);
 
   let osP = 0;
@@ -57,8 +53,7 @@ const StepFour: React.FC<IStepFour> = ({
   const totalSum = priceOfPlan + osP + lsP + cpP;
 
   const handleConfirm = () => {
-    setStepFour(false);
-    setThankYou(true);
+    setStep(5);
   };
 
   return (
@@ -70,10 +65,10 @@ const StepFour: React.FC<IStepFour> = ({
           <div className={styles.planContainer}>
             <p className={styles.plan}>
               {`${activePlan.slice(0, 1).toUpperCase()}${activePlan.slice(1)} `}
-              {term == "year" ? "(Yearly)" : "(Monthly)"}
+              {term == 'year' ? '(Yearly)' : '(Monthly)'}
             </p>
             <p className={styles.planPrice}>
-              {term == "year"
+              {term == 'year'
                 ? `$${priceOfPlan * 10}/yr`
                 : `$${priceOfPlan}/mo`}
             </p>
@@ -91,7 +86,7 @@ const StepFour: React.FC<IStepFour> = ({
                     className={styles.changeButtonsNew}
                     onClick={() => {
                       setActivePlan(plan);
-                      setValue("plan", plan);
+                      setValue('plan', plan);
                     }}
                   >
                     {`${plan.slice(0, 1).toUpperCase()}${plan.slice(1)}`}
@@ -104,9 +99,9 @@ const StepFour: React.FC<IStepFour> = ({
           <div onClick={() => setChangeDiv(false)}>
             {onlineService && (
               <p className={styles.services}>
-                Online service{" "}
+                Online service{' '}
                 <span>
-                  {term == "year"
+                  {term == 'year'
                     ? `+$${onlineServicePrice * 10}/yr`
                     : `+$${onlineServicePrice}/mo`}
                 </span>
@@ -114,9 +109,9 @@ const StepFour: React.FC<IStepFour> = ({
             )}
             {largerStorage && (
               <p className={styles.services}>
-                Larger Storage{" "}
+                Larger Storage{' '}
                 <span>
-                  {term == "year"
+                  {term == 'year'
                     ? `+$${largerStoragePrice * 10}/yr`
                     : `+$${largerStoragePrice}/mo`}
                 </span>
@@ -124,9 +119,9 @@ const StepFour: React.FC<IStepFour> = ({
             )}
             {customizableProfile && (
               <p className={styles.services}>
-                Customizable Profile{" "}
+                Customizable Profile{' '}
                 <span>
-                  {term == "year"
+                  {term == 'year'
                     ? `+$${customizableProfilePrice * 10}/yr`
                     : `+$${customizableProfilePrice}/mo`}
                 </span>
@@ -135,20 +130,14 @@ const StepFour: React.FC<IStepFour> = ({
           </div>
         </div>
         <p className={styles.total}>
-          Total ({term == "year" ? "per year" : "per month"})
+          Total ({term == 'year' ? 'per year' : 'per month'})
           <span>
-            {term == "year" ? `$${totalSum * 10}/yr` : `$${totalSum}/mo`}
+            {term == 'year' ? `$${totalSum * 10}/yr` : `$${totalSum}/mo`}
           </span>
         </p>
       </div>
       <footer className={stylesB.footerContainer}>
-        <button
-          className={stylesB.goBackButton}
-          onClick={() => {
-            setStepFour(false);
-            setStepThree(true);
-          }}
-        >
+        <button className={stylesB.goBackButton} onClick={() => setStep(3)}>
           Go Back
         </button>
         <button

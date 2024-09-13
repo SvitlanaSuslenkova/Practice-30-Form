@@ -5,16 +5,10 @@ import stylesB from '../Mainpage/NextBackButtons.module.css';
 import { useFormContext } from 'react-hook-form';
 
 interface IStepOne {
-  setStepOne: (stepOne: boolean) => void;
-  setStepTwo: (stepTwo: boolean) => void;
-  //setStepOneDone: (stepOneDone: boolean) => void;
+  setStep: (step: 1 | 2 | 3 | 4 | 5) => void;
 }
 
-const StepOne: React.FC<IStepOne> = ({
-  setStepOne,
-  setStepTwo,
-  //setStepOneDone,
-}) => {
+const StepOne: React.FC<IStepOne> = ({ setStep }) => {
   //const multipleValues = getValues(["name", "email", "phone"]);
 
   const {
@@ -28,13 +22,10 @@ const StepOne: React.FC<IStepOne> = ({
     const t = await trigger();
     if (t) {
       if (errors.name || errors.email || errors.phone) {
-        // setStepOneDone(false);
         setDisabled(true);
       } else {
         setDisabled(false);
-        // setStepOneDone(true);
-        setStepOne(false);
-        setStepTwo(true);
+        setStep(2);
       }
     }
   }

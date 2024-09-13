@@ -1,15 +1,13 @@
-"use client";
-import React from "react";
-import styles from "./StepThree.module.css";
-import InputCheckbox from "./InputCheckbox/InputCheckbox";
-import stylesB from "../Mainpage/NextBackButtons.module.css";
-import { useFormContext } from "react-hook-form";
-import { useEffect } from "react";
+'use client';
+import React from 'react';
+import styles from './StepThree.module.css';
+import InputCheckbox from './InputCheckbox/InputCheckbox';
+import stylesB from '../Mainpage/NextBackButtons.module.css';
+import { useFormContext } from 'react-hook-form';
+import { useEffect } from 'react';
 
 interface IStepThree {
-  setStepTwo: (stepTwo: boolean) => void;
-  setStepThree: (stepThree: boolean) => void;
-  setStepFour: (stepFour: boolean) => void;
+  setStep: (step: 1 | 2 | 3 | 4 | 5) => void;
   onlineService: boolean;
   setOnlineService: (onlineService: boolean) => void;
   largerStorage: boolean;
@@ -23,9 +21,7 @@ interface IStepThree {
 }
 
 const StepThree: React.FC<IStepThree> = ({
-  setStepTwo,
-  setStepThree,
-  setStepFour,
+  setStep,
   onlineService,
   setOnlineService,
   largerStorage,
@@ -40,19 +36,19 @@ const StepThree: React.FC<IStepThree> = ({
   const { setValue } = useFormContext();
 
   const handleChange = (data: string) => {
-    if (data == "onlineService") {
+    if (data == 'onlineService') {
       setOnlineService(!onlineService);
-    } else if (data == "largerStorage") {
+    } else if (data == 'largerStorage') {
       setLargerStorage(!largerStorage);
-    } else if (data == "customizableProfile") {
+    } else if (data == 'customizableProfile') {
       setCustomizableProfile(!customizableProfile);
     }
   };
 
   useEffect(() => {
-    setValue("onlineService", onlineService);
-    setValue("largerStorage", largerStorage);
-    setValue("customizableProfile", customizableProfile);
+    setValue('onlineService', onlineService);
+    setValue('largerStorage', largerStorage);
+    setValue('customizableProfile', customizableProfile);
   }, [onlineService, largerStorage, customizableProfile]);
 
   return (
@@ -67,7 +63,7 @@ const StepThree: React.FC<IStepThree> = ({
               ? styles.activeStepThreebutton
               : styles.stepThreebutton
           }
-          onClick={() => handleChange("onlineService")}
+          onClick={() => handleChange('onlineService')}
         >
           <InputCheckbox defaultChecked={onlineService} id="onlineService" />
           <div>
@@ -77,7 +73,7 @@ const StepThree: React.FC<IStepThree> = ({
             </p>
           </div>
           <p className={styles.buttonPrice}>
-            {term == "month"
+            {term == 'month'
               ? `+$${onlineServicePrice}/mo`
               : `+$${onlineServicePrice * 10}/yr`}
           </p>
@@ -88,7 +84,7 @@ const StepThree: React.FC<IStepThree> = ({
               ? styles.activeStepThreebutton
               : styles.stepThreebutton
           }
-          onClick={() => handleChange("largerStorage")}
+          onClick={() => handleChange('largerStorage')}
         >
           <InputCheckbox defaultChecked={largerStorage} id="largerStorage" />
           <div>
@@ -96,7 +92,7 @@ const StepThree: React.FC<IStepThree> = ({
             <p className={styles.buttonDescription}>Extra 1TB of cloud save</p>
           </div>
           <p className={styles.buttonPrice}>
-            {term == "month"
+            {term == 'month'
               ? `+$${largerStoragePrice}/mo`
               : `+$${largerStoragePrice * 10}/yr`}
           </p>
@@ -107,7 +103,7 @@ const StepThree: React.FC<IStepThree> = ({
               ? styles.activeStepThreebutton
               : styles.stepThreebutton
           }
-          onClick={() => handleChange("customizableProfile")}
+          onClick={() => handleChange('customizableProfile')}
         >
           <InputCheckbox
             defaultChecked={customizableProfile}
@@ -120,29 +116,17 @@ const StepThree: React.FC<IStepThree> = ({
             </p>
           </div>
           <p className={styles.buttonPrice}>
-            {term == "month"
+            {term == 'month'
               ? `+$${customizableProfilePrice}/mo`
               : `+$${customizableProfilePrice * 10}/yr`}
           </p>
         </button>
       </div>
       <footer className={stylesB.footerContainer}>
-        <button
-          className={stylesB.goBackButton}
-          onClick={() => {
-            setStepThree(false);
-            setStepTwo(true);
-          }}
-        >
+        <button className={stylesB.goBackButton} onClick={() => setStep(2)}>
           Go Back
         </button>
-        <button
-          className={stylesB.nextStepButton}
-          onClick={() => {
-            setStepThree(false);
-            setStepFour(true);
-          }}
-        >
+        <button className={stylesB.nextStepButton} onClick={() => setStep(4)}>
           Next Step
         </button>
       </footer>
