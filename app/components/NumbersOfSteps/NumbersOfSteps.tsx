@@ -1,9 +1,7 @@
 'use client';
 import React from 'react';
 import styles from './NumbersOfSteps.module.css';
-//import { useNextHandler } from "../Mainpage/checkStepOne";
 import { useFormContext } from 'react-hook-form';
-//import { checkStepOne } from "../Mainpage/checkStepOne";
 import { useState } from 'react';
 
 interface INumbersOfSteps {

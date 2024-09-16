@@ -21,16 +21,17 @@ interface FormData {
   largerStorage: string;
   customizableProfile: string;
 }
+/*Prices per month*/
+const arcadePrice = 9;
+const advancedPrice = 12;
+const proPrice = 15;
+const onlineServicePrice = 1;
+const largerStoragePrice = 2;
+const customizableProfilePrice = 2;
+
+type StepState = 1 | 2 | 3 | 4 | 5;
 
 const Mainpage = () => {
-  /*Prices per month*/
-  const arcadePrice = 9;
-  const advancedPrice = 12;
-  const proPrice = 15;
-  const onlineServicePrice = 1;
-  const largerStoragePrice = 2;
-  const customizableProfilePrice = 2;
-
   const methods = useForm({
     mode: 'onBlur',
     defaultValues: {
@@ -46,8 +47,6 @@ const Mainpage = () => {
   });
 
   const { handleSubmit } = methods;
-
-  type StepState = 1 | 2 | 3 | 4 | 5;
 
   const [step, setStep] = useState<StepState>(1);
 

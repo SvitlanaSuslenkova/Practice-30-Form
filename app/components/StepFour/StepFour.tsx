@@ -18,6 +18,9 @@ interface IStepFour {
   largerStoragePrice: number;
   customizableProfilePrice: number;
 }
+let osP = 0;
+let lsP = 0;
+let cpP = 0;
 
 const StepFour: React.FC<IStepFour> = ({
   setStep,
@@ -38,9 +41,6 @@ const StepFour: React.FC<IStepFour> = ({
   const plans = ['arcade', 'advanced', 'pro'];
   const restPlans = plans.filter((plan: string) => plan !== activePlan);
 
-  let osP = 0;
-  let lsP = 0;
-  let cpP = 0;
   if (onlineService) {
     osP = onlineServicePrice;
   }
